@@ -24,7 +24,6 @@ export class SingUpController implements Controller {
       }
 
       if (httpRequest.body.password !== httpRequest.body.passwordConfirmation) {
-        console.log('entrei aqui')
         return badResquest(new InvalidParamError('passwordConfirmation'))
       }
     } catch (error) {

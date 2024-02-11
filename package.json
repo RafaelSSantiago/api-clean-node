@@ -23,5 +23,10 @@
   },
   "dependencies": {
     "eslint-config-standard-with-typescript": "^43.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }

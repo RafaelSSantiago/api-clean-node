@@ -1,17 +1,17 @@
-import type { Config } from 'jest'
-
-const config: Config = {
-  roots: ['<rootDir>/src'],
-  coveragePathIgnorePatterns: [
-    '/node_modules/',
-    '/coverage/'
-  ],
-  clearMocks: true,
-  collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
-  coverageProvider: 'v8',
+const config = {
+  preset: 'ts-jest/presets/default',
   testEnvironment: 'node',
+  roots: ['<rootDir>/src'],
   transform: {
-    '.+\\.ts$': 'ts-jest'
+    '^.+\\.tsx?$': 'ts-jest'
+  },
+  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  collectCoverage: true,
+  collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
+  coverageDirectory: '<rootDir>/coverage',
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1'
   }
 }
 

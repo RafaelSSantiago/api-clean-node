@@ -1,5 +1,5 @@
 const config = {
-  preset: 'ts-jest/presets/default',
+  preset: '@shelf/jest-mongodb',
   testEnvironment: 'node',
   roots: ['<rootDir>/src'],
   transform: {

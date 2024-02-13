@@ -5,7 +5,7 @@ export const MongoHelper = {
   async connect (uri: string): Promise<void> {
     /* eslint-disable @typescript-eslint/non-nullable-type-assertion-style */
     /* eslint-disable @typescript-eslint/no-unsafe-argument */
-    this.client = await MongoClient.connect(process.env.MONGO_URL as string, {
+    this.client = await MongoClient.connect(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true
     } as any) // Usando any para evitar erros de tipo relacionados a versão
